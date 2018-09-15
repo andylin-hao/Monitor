@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link href="/static/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/signup.css">
+    <script src="/static/js/mui.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/signup.js"></script>
+</head>
+<body>
+<form class="mui-form" action="{% url 'Signup' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Join Us</legend>
+        <div class="mui-textfield">
+            <input type="text" placeholder="User Name" name="username" value="{{ username }}">
+        </div>
+        <div class="mui-textfield">
+            <input type="email" placeholder="Email" name="email" value="{{ email }}">
+        </div>
+        <div class="mui-textfield">
+            <input type="password" placeholder="Password" name="password_1">
+        </div>
+        <div class="mui-textfield">
+            <input type="password" placeholder="Confirm Password" name="password_2">
+        </div>
+        <a class="mui-btn mui-btn--raised" onclick="submitCheck();">Submit</a>
+    </fieldset>
+</form>
+<script>
+    if ("{{ error }}") {
+        window.alert("{{ error }}")
+    }
+</script>
+</body>
+</html>

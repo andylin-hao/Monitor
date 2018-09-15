@@ -1,0 +1,11 @@
+.mui-form {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 15%;
+    width: 40%;
+    text-align: center;
+}
+
+legend {
+    font-weight: bolder;
+}

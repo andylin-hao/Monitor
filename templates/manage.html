@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/manage.css">
+    <script src="/static/js/mui.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <title>Manage</title>
+</head>
+<body>
+<h1>Manage</h1>
+<div class="mui-panel content">
+    {% for user in users %}
+        <div class="link">
+            <a href='{{ user.id }}'>{{ user.username }}</a>
+        </div>
+    {% endfor %}
+    <a href="{% url 'AddUser' %}" class="mui-btn mui-btn--fab return" id="plus">+</a>
+</div>
+</body>
+</html>

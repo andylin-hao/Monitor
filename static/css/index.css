@@ -1,0 +1,41 @@
+#head{
+    float: left;
+    text-align: center;
+    width: 20%;
+    margin-left: 40%;
+    margin-bottom: 8%;
+    margin-top: 2.5%;
+}
+#button{
+    float: left;
+    width: 40%;
+    margin-top: 50px;
+}
+.mui-btn{
+    width: fit-content;
+    float: right;
+    margin-right: 2% !important;
+}
+.mui-form{
+    width: 45%;
+    float: right;
+}
+.top-form{
+    width: fit-content;
+    float: right;
+    margin-right: 5% !important;
+}
+#button:after{
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+img{
+    float: left;
+    width: 30%;
+    margin-left: 35%;
+    display: block;
+}
+

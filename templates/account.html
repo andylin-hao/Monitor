@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+    <link href="/static/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <script src="/static/js/mui.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+</head>
+<body>
+<form class="mui-form" action="">
+    <fieldset>
+        <legend>Account Info</legend>
+        <div class="mui-textfield">
+            <input type="text" value="User name: {{ username }}" name="username" readonly>
+        </div>
+        <div class="mui-textfield">
+            <input type="text" value="Email: {{ email }}" name="email" readonly>
+        </div>
+        <a href="{% url 'Password' %}" class="mui-btn mui-btn--raised" onclick="changePassword()">Change Password</a>
+        <a href="{% url 'RegisterFace' %}" class="mui-btn mui-btn--raised" onclick="clibrateFace()">Calibrate Face</a>
+    </fieldset>
+</form>
+<script>
+    if ("{{ error }}") {
+        window.alert("{{ error }}")
+    }
+</script>
+</body>
+</html>

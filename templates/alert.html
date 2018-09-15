@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alert</title>
+    <link href="/static/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/alert.css">
+    <script src="/static/js/mui.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/alert.js"></script>
+</head>
+<body>
+<h1>Alert</h1>
+<form class="mui-form" action="{% url 'AlertPage' %}" method="post" id="thresForm">
+    <div class="mui-textfield top-form thresForm">
+        <input id="threshold" type="number" placeholder="Alert Threshold is {{ threshold }}" name="threshold">
+    </div>
+    <a onclick="submitCheck()" class="mui-btn mui-btn--raised top-form thresForm">Submit</a>
+</form>
+<div id="alert">
+    {% for index, alert in alerts.items %}
+        {% for pos, msg in alert.items %}
+            <div class="msg">
+                <h4>{{ username }} became {{ msg }}</h4>
+                <form action="{% url 'AlertPage' %}" method="post">
+                    <input type="hidden" name="index" value="{{ index }}">
+                    <input type="hidden" name="pos" value="{{ pos }}">
+                    <button class="mui-btn mui-btn--fab mui-btn--danger delete"></button>
+                </form>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+</body>
+</html>

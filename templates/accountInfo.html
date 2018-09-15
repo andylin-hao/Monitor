@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Info</title>
+    <link href="/static/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <script src="/static/js/mui.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+</head>
+<body>
+<form class="mui-form" action="" style="margin-top: 5% !important;">
+    <fieldset>
+        <legend>Account Info</legend>
+        <div class="mui-textfield">
+            <input type="text" value="User name: {{ user.username }}" readonly>
+        </div>
+        <div class="mui-textfield">
+            <input type="text" value="Email: {{ user.email }}" readonly>
+        </div>
+        <div class="mui-textfield">
+            <h4 style="text-align: left">Emotion Data:</h4>
+            <img src="{{ img }}">
+        </div>
+    </fieldset>
+</form>
+<script>
+    if ("{{ error }}") {
+        window.alert("{{ error }}")
+    }
+</script>
+</body>
+</html>

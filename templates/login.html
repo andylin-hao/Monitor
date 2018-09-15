@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="/static/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <script src="/static/js/mui.min.js"></script>
+</head>
+<body>
+<form class="mui-form" action="{% url 'Login' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Login</legend>
+        <div class="mui-textfield">
+            <input type="text" placeholder="User Name" name="username">
+        </div>
+        <div class="mui-textfield">
+            <input type="password" placeholder="Password" name="password">
+        </div>
+        <button type="submit" class="mui-btn mui-btn--raised">Login</button>
+    </fieldset>
+</form>
+<script>
+    if ("{{ error }}") {
+        window.alert("{{ error }}")
+    }
+</script>
+</body>
+</html>
