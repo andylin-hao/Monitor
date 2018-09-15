@@ -83,7 +83,7 @@ def generateVideo():
     global video_capture
     global cameraChange
     while True:
-        time.sleep(0.03)
+        time.sleep(0.1)
         img = video_capture.read()[1]
         while img is None or cameraChange:
             video_capture = cv2.VideoCapture(camera)
